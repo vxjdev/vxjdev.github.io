@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>vxjdev</title>
+    <script>
+      // GitHub Pages has no server-side rewrites, so a direct load of a
+      // client-side route (e.g. /projects) 404s here. Redirect it back to
+      // index.html with the path encoded in the query string; index.html
+      // decodes it before React Router mounts. See spa-github-pages.
+      var l = window.location
+      l.replace(
+        l.protocol + '//' + l.host + '/?/' +
+        l.pathname.slice(1).replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

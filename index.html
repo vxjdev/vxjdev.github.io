@@ -14,10 +14,25 @@
       rel="stylesheet"
     />
     <title>vxjdev — Coming Soon</title>
-    <script type="module" crossorigin src="/assets/index-C2gxENk3.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CE3D88sW.css">
+    <script type="module" crossorigin src="/assets/index-pMmu2VlC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9TIdgwe.css">
   </head>
   <body>
+    <script>
+      // Decode the path encoded by public/404.html before React Router mounts.
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
     <div id="root"></div>
   </body>
 </html>
