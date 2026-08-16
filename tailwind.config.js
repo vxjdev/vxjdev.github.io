@@ -30,6 +30,7 @@ export default {
         'fade-up': 'fadeUp 0.8s ease forwards',
         'breathe': 'breathe 6s ease-in-out infinite',
         'shimmer': 'shimmer 8s ease-in-out infinite',
+        'blink': 'blink 1s step-end infinite',
       },
       keyframes: {
         fadeUp: {
@@ -43,6 +44,10 @@ export default {
         shimmer: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
       },
     },
